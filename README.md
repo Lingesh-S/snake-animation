@@ -3,6 +3,6 @@ GitHub contribution snake animation
 
 # 🐍 GitHub Contribution Snake Animation
 
-<p align="center">
-  <img src="https://Lingesh-S.github.io/snake-animation/github-contribution-grid-snake.svg" alt="github contribution snake animation">
-</p>
+## 🐍 GitHub Contribution Snake Animation
+
+![GitHub Snake Animation](https://Lingesh-S.github.io/snake-animation/github-contribution-grid-snake.svg)
