@@ -15,13 +15,13 @@ jobs:
       - name: Generate the snake animation
   uses: Platane/snk@v3
   with:
-    github_user_name: Lingesh-s
-    outputs: |
-      dist/github-contribution-grid-snake.svg
-    snake_color: '#00F7FF'
-    background_color: '#0D1117'
-    grid_color: '#30363D'
-    color_snake: '#00F7FF'
+  github_user_name: Lingesh-S
+  outputs: |
+    dist/github-contribution-grid-snake.svg
+  color_snake: neon
+  color_grid: retro
+  effect: dank
+
 
 
       - name: Push the animation
