@@ -1,5 +1,3 @@
+## 🐍 Contribution Snake
 
-
-### 🐍 Contribution Snake
-
-![snake gif](https://Lingesh-S.github.io/snake-animation/github-contribution-grid-snake.svg)
+![GitHub Snake dark](https://raw.githubusercontent.com/Lingesh-S/snake-animation/output/github-contribution-grid-snake-dark.svg)
