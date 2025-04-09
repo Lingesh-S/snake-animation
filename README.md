@@ -2,9 +2,8 @@
 
 This repo auto-generates a GitHub contributions snake animation every day!
 
-### 🎥 Watch the snake eat my contributions:
 
-![snake gif](https://raw.githubusercontent.com/Lingesh-S/snake-animation/main/assets/snake.svg)
+![snake gif](assets/snake.svg)
 
 
 ---
