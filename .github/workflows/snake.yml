@@ -2,12 +2,15 @@ name: 🐍 Generate Snake Contribution Animation
 
 on:
   schedule:
-    - cron: "0 0 * * *"  # Runs every day at midnight UTC
+    - cron: "0 0 * * *"  # every midnight UTC
   workflow_dispatch:
 
 jobs:
   generate:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # 💥 this line is important!
+
     steps:
       - name: Generate Snake SVG
         uses: Platane/snk@v3
