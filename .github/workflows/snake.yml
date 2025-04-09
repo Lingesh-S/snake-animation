@@ -22,8 +22,8 @@ jobs:
 
       - name: Commit & Push changes
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "Lingesh-S"
+          git config --global user.email "lingeshsrinivasan1@gmail.com"
           git add assets/snake.svg
           git commit -m "🐍 Update GitHub Contribution Snake" || echo "No changes to commit"
           git remote set-url origin https://x-access-token:${{ secrets.PAT }}@github.com/${{ github.repository }}
