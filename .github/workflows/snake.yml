@@ -2,18 +2,32 @@ name: Generate Snake Animation
 
 on:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 0 * * *" # Every midnight
   workflow_dispatch:
 
 jobs:
   generate:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
     steps:
-      - name: Generate Snake SVG
+      - name: ⬇️ Checkout repository
+        uses: actions/checkout@v3
+
+      - name: 🐍 Generate Snake SVG
         uses: Platane/snk@v3
         with:
           github_user_name: Lingesh-S
           outputs: |
-            assets/snake.svg
+            ./assets/snake.svg
           theme: dark-pixel-grid
-          color_snake: "#39ff14"  # Neon green
+          color_snake: "#39ff14"
+
+      - name: 💾 Commit and Push
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: GitHub Actions
+          author_email: actions@github.com
+          message: "chore: update neon snake 🐍"
+          add: "assets/snake.svg"
