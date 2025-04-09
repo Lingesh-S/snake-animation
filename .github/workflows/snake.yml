@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          persist-credentials: false   # ⬅️ Important line!
 
       - name: Generate Snake SVG
         uses: Platane/snk@v3
@@ -20,11 +22,13 @@ jobs:
           outputs: |
             ./assets/snake.svg
 
-      - name: Commit & Push changes
+      - name: Commit & Push
+        env:
+          PAT: ${{ secrets.PAT }}
         run: |
-          git config --global user.name "Lingesh-S"
-          git config --global user.email "lingeshsrinivasan1@gmail.com"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add assets/snake.svg
           git commit -m "🐍 Update GitHub Contribution Snake" || echo "No changes to commit"
-          git remote set-url origin https://x-access-token:${{ secrets.PAT }}@github.com/${{ github.repository }}
+          git remote set-url origin https://x-access-token:${PAT}@github.com/${{ github.repository }}
           git push origin HEAD:main
