@@ -1,5 +1,26 @@
-## 🐍 Contribution Snake
+# 🐍 Contribution Snake Animation
 
-![Snake animation](./dist/github-snake.svg)
+This repo auto-generates a GitHub contributions snake animation every day!
 
-![Dark Snake](./dist/github-snake-dark.svg)
+### 🎥 Watch the snake eat my contributions:
+![snake gif](dist/snake.gif)
+
+---
+
+### 📅 Auto-Updating Daily
+
+Powered by GitHub Actions. Updates every midnight with CRON.
+
+---
+
+### 🧪 Setup Highlights
+
+- ⚙️ Neon snake color
+- 🕹️ Retro grid background
+- 🕛 Auto-updates with CRON
+- 📁 Hosted in `dist/` folder
+- ✨ GitHub Actions powered!
+
+---
+
+> ⚡ Maintained by [Lingesh S](https://github.com/Lingesh-S)
