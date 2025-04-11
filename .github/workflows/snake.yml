@@ -5,6 +5,9 @@ on:
     - cron: "0 0 * * *" # Runs every day at midnight
   workflow_dispatch:
 
+permissions:
+  contents: write  # Grants write permission to contents
+
 jobs:
   generate:
     runs-on: ubuntu-latest
@@ -13,7 +16,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          persist-credentials: false   # ⬅️ Important line!
+          persist-credentials: false
 
       - name: Generate Snake SVG
         uses: Platane/snk@v3
