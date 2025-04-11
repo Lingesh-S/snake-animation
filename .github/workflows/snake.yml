@@ -2,11 +2,11 @@ name: Generate Snake Animation
 
 on:
   schedule:
-    - cron: "0 0 * * *" # Runs every day at midnight
+    - cron: "0 0 * * *" # Every day at midnight
   workflow_dispatch:
 
 permissions:
-  contents: write  # Grants write permission to contents
+  contents: write
 
 jobs:
   generate:
@@ -24,6 +24,10 @@ jobs:
           github_user_name: Lingesh-S
           outputs: |
             ./assets/snake.svg
+          # 🎨 Customize colors
+          color_snake: "#39FF14"         # Neon green
+          color_dots: "#00FFFF,#FF00FF,#FFFF00,#FF4500,#9400D3" # Retro grid dots
+          color_background: "#0d1117"    # Dark GitHub background
 
       - name: Commit & Push
         env:
@@ -32,6 +36,6 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add assets/snake.svg
-          git commit -m "🐍 Update GitHub Contribution Snake" || echo "No changes to commit"
+          git commit -m "🐍 Update Neon Snake"
           git remote set-url origin https://x-access-token:${PAT}@github.com/${{ github.repository }}
           git push origin HEAD:main
