@@ -2,24 +2,40 @@ name: Generate Snake Animation
 
 on:
   schedule:
-    - cron: "0 0 * * *"  # Runs every day at midnight UTC
-  workflow_dispatch:     # Manual trigger
+    - cron: "0 0 * * *" # Every day at midnight
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   generate:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Generate GitHub Contribution Snake
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+
+      - name: Generate Snake SVG
         uses: Platane/snk@v3
         with:
           github_user_name: Lingesh-S
-          outputs: dist/github-contribution-grid-snake.svg
+          outputs: |
+            ./assets/snake.svg
+          # 🎨 Customize colors
+          color_snake: "#39FF14"         # Neon green
+          color_dots: "#00FFFF,#FF00FF,#FFFF00,#FF4500,#9400D3" # Retro grid dots
+          color_background: "#0d1117"    # Dark GitHub background
 
-      - name: Push snake to output branch
-        uses: crazy-max/ghaction-github-pages@v3
-        with:
-          target_branch: output
-          build_dir: dist
+      - name: Commit & Push
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PAT: ${{ secrets.PAT }}
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/snake.svg
+          git commit -m "🐍 Update Neon Snake"
+          git remote set-url origin https://x-access-token:${PAT}@github.com/${{ github.repository }}
+          git push origin HEAD:main
