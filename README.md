@@ -4,7 +4,7 @@ This repo auto-generates a GitHub contributions snake animation every day!
 
 ### 🐍 GitHub Contribution Snake
 
-[View the animation here](./assets/snake.svg)
+(./assets/snake.svg)
 
 
 
