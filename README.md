@@ -9,6 +9,7 @@ This repo auto-generates a GitHub contributions snake animation every day!
 
 
 
+
 ### 🕒 Auto-Updating Daily
 Powered by GitHub Actions. Updates every midnight with CRON.
 
