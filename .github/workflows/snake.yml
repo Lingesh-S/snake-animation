@@ -19,6 +19,7 @@ jobs:
           github_user_name: Lingesh-S
           outputs: |
             ./dist/github-contribution-grid-snake.svg
+            
 
       - name: Push SVG to output branch
         uses: crazy-max/ghaction-github-pages@v4
