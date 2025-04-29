@@ -20,7 +20,6 @@ Powered by GitHub Actions. Updates every midnight with CRON.
 - 📦 Hosted in `output/` branch
 - 🚀 GitHub Actions powered!
 
-
 ---
 
 > ⚡ Maintained by [Lingesh S](https://github.com/Lingesh-S)
