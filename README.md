@@ -6,7 +6,6 @@ This repo auto-generates a GitHub contributions snake animation every day!
 
 ![snake gif](https://raw.githubusercontent.com/Lingesh-S/snake-animation/output/github-contribution-grid-snake.svg)
 
-
 ---
 
 ### 🕒 Auto-Updating Daily
